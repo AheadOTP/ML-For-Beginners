@@ -1,26 +1,1984 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+    <header>
+        <title>Cuisine Matcher</title>
+        <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web@1.8.0-dev.20210608.0/dist/ort.min.js"></script> 
+    </header>
+    <body>
+        <h1>Check your refrigerator. What can you create?</h1>
+        <div id="wrapper">
+            <div class="boxCont">
+                <input type="checkbox" value="0" class="checkbox">
+                <label>almond</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="1" class="checkbox">
+                <label>angelica</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="2" class="checkbox">
+                <label>anise</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="3" class="checkbox">
+                <label>anise_seed</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="4" class="checkbox">
+                <label>apple</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="5" class="checkbox">
+                <label>apple_brandy</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="6" class="checkbox">
+                <label>apricot</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="7" class="checkbox">
+                <label>armagnac</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="8" class="checkbox">
+                <label>artemisia</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="9" class="checkbox">
+                <label>artichoke</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="10" class="checkbox">
+                <label>asparagus</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="11" class="checkbox">
+                <label>avocado</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="12" class="checkbox">
+                <label>bacon</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="13" class="checkbox">
+                <label>baked_potato</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="14" class="checkbox">
+                <label>balm</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="15" class="checkbox">
+                <label>banana</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="16" class="checkbox">
+                <label>barley</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="17" class="checkbox">
+                <label>bartlett_pear</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="18" class="checkbox">
+                <label>basil</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="19" class="checkbox">
+                <label>bay</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="20" class="checkbox">
+                <label>bean</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="21" class="checkbox">
+                <label>beech</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="22" class="checkbox">
+                <label>beef</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="23" class="checkbox">
+                <label>beef_broth</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="24" class="checkbox">
+                <label>beef_liver</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="25" class="checkbox">
+                <label>beer</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="26" class="checkbox">
+                <label>beet</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="27" class="checkbox">
+                <label>bell_pepper</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="28" class="checkbox">
+                <label>bergamot</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="29" class="checkbox">
+                <label>berry</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="30" class="checkbox">
+                <label>bitter_orange</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="31" class="checkbox">
+                <label>black_bean</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="32" class="checkbox">
+                <label>black_currant</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="33" class="checkbox">
+                <label>black_mustard_seed_oil</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="34" class="checkbox">
+                <label>black_pepper</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="35" class="checkbox">
+                <label>black_raspberry</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="36" class="checkbox">
+                <label>black_sesame_seed</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="37" class="checkbox">
+                <label>black_tea</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="38" class="checkbox">
+                <label>blackberry</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="39" class="checkbox">
+                <label>blackberry_brandy</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="40" class="checkbox">
+                <label>blue_cheese</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="41" class="checkbox">
+                <label>blueberry</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="42" class="checkbox">
+                <label>bone_oil</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="43" class="checkbox">
+                <label>bourbon_whiskey</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="44" class="checkbox">
+                <label>brandy</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="45" class="checkbox">
+                <label>brassica</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="46" class="checkbox">
+                <label>bread</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="47" class="checkbox">
+                <label>broccoli</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="48" class="checkbox">
+                <label>brown_rice</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="49" class="checkbox">
+                <label>brussels_sprout</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="50" class="checkbox">
+                <label>buckwheat</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="51" class="checkbox">
+                <label>butter</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="52" class="checkbox">
+                <label>buttermilk</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="53" class="checkbox">
+                <label>cabbage</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="54" class="checkbox">
+                <label>cabernet_sauvignon_wine</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="55" class="checkbox">
+                <label>cacao</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="56" class="checkbox">
+                <label>camembert_cheese</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="57" class="checkbox">
+                <label>cane_molasses</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="58" class="checkbox">
+                <label>caraway</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="59" class="checkbox">
+                <label>cardamom</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="60" class="checkbox">
+                <label>carnation</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="61" class="checkbox">
+                <label>carob</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="62" class="checkbox">
+                <label>carrot</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="63" class="checkbox">
+                <label>cashew</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="64" class="checkbox">
+                <label>cassava</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="65" class="checkbox">
+                <label>catfish</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="66" class="checkbox">
+                <label>cauliflower</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="67" class="checkbox">
+                <label>caviar</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="68" class="checkbox">
+                <label>cayenne</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="69" class="checkbox">
+                <label>celery</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="70" class="checkbox">
+                <label>celery_oil</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="71" class="checkbox">
+                <label>cereal</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="72" class="checkbox">
+                <label>chamomile</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="73" class="checkbox">
+                <label>champagne_wine</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="74" class="checkbox">
+                <label>chayote</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="75" class="checkbox">
+                <label>cheddar_cheese</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="76" class="checkbox">
+                <label>cheese</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="77" class="checkbox">
+                <label>cherry</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="78" class="checkbox">
+                <label>cherry_brandy</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="79" class="checkbox">
+                <label>chervil</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="80" class="checkbox">
+                <label>chicken</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="81" class="checkbox">
+                <label>chicken_broth</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="82" class="checkbox">
+                <label>chicken_liver</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="83" class="checkbox">
+                <label>chickpea</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="84" class="checkbox">
+                <label>chicory</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="85" class="checkbox">
+                <label>chinese_cabbage</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="86" class="checkbox">
+                <label>chive</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="87" class="checkbox">
+                <label>cider</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="88" class="checkbox">
+                <label>cilantro</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="89" class="checkbox">
+                <label>cinnamon</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="90" class="checkbox">
+                <label>citrus</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="91" class="checkbox">
+                <label>citrus_peel</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="92" class="checkbox">
+                <label>clam</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="93" class="checkbox">
+                <label>clove</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="94" class="checkbox">
+                <label>cocoa</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="95" class="checkbox">
+                <label>coconut</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="96" class="checkbox">
+                <label>coconut_oil</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="97" class="checkbox">
+                <label>cod</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="98" class="checkbox">
+                <label>coffee</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="99" class="checkbox">
+                <label>cognac</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="100" class="checkbox">
+                <label>concord_grape</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="101" class="checkbox">
+                <label>condiment</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="102" class="checkbox">
+                <label>coriander</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="103" class="checkbox">
+                <label>corn</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="104" class="checkbox">
+                <label>corn_flake</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="105" class="checkbox">
+                <label>corn_grit</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="106" class="checkbox">
+                <label>cottage_cheese</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="107" class="checkbox">
+                <label>crab</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="108" class="checkbox">
+                <label>cranberry</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="109" class="checkbox">
+                <label>cream</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="110" class="checkbox">
+                <label>cream_cheese</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="111" class="checkbox">
+                <label>cucumber</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="112" class="checkbox">
+                <label>cumin</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="113" class="checkbox">
+                <label>cured_pork</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="114" class="checkbox">
+                <label>currant</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="115" class="checkbox">
+                <label>date</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="116" class="checkbox">
+                <label>dill</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="117" class="checkbox">
+                <label>durian</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="118" class="checkbox">
+                <label>eel</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="119" class="checkbox">
+                <label>egg</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="120" class="checkbox">
+                <label>egg_noodle</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="121" class="checkbox">
+                <label>elderberry</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="122" class="checkbox">
+                <label>emmental_cheese</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="123" class="checkbox">
+                <label>endive</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="124" class="checkbox">
+                <label>enokidake</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="125" class="checkbox">
+                <label>fennel</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="126" class="checkbox">
+                <label>fenugreek</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="127" class="checkbox">
+                <label>feta_cheese</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="128" class="checkbox">
+                <label>fig</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="129" class="checkbox">
+                <label>fish</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="130" class="checkbox">
+                <label>flower</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="131" class="checkbox">
+                <label>frankfurter</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="132" class="checkbox">
+                <label>fruit</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="133" class="checkbox">
+                <label>galanga</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="134" class="checkbox">
+                <label>gardenia</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="135" class="checkbox">
+                <label>gelatin</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="136" class="checkbox">
+                <label>geranium</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="137" class="checkbox">
+                <label>gin</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="138" class="checkbox">
+                <label>goat_cheese</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="139" class="checkbox">
+                <label>grape</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="140" class="checkbox">
+                <label>grape_brandy</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="141" class="checkbox">
+                <label>grape_juice</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="142" class="checkbox">
+                <label>grapefruit</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="143" class="checkbox">
+                <label>green_bell_pepper</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="144" class="checkbox">
+                <label>green_tea</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="145" class="checkbox">
+                <label>gruyere_cheese</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="146" class="checkbox">
+                <label>guava</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="147" class="checkbox">
+                <label>haddock</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="148" class="checkbox">
+                <label>ham</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="149" class="checkbox">
+                <label>hazelnut</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="150" class="checkbox">
+                <label>herring</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="151" class="checkbox">
+                <label>holy_basil</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="152" class="checkbox">
+                <label>honey</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="153" class="checkbox">
+                <label>hop</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="154" class="checkbox">
+                <label>horseradish</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="155" class="checkbox">
+                <label>huckleberry</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="156" class="checkbox">
+                <label>jamaican_rum</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="157" class="checkbox">
+                <label>japanese_plum</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="158" class="checkbox">
+                <label>jasmine</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="159" class="checkbox">
+                <label>jasmine_tea</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="160" class="checkbox">
+                <label>juniper_berry</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="161" class="checkbox">
+                <label>kaffir_lime</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="162" class="checkbox">
+                <label>kale</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="163" class="checkbox">
+                <label>katsuobushi</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="164" class="checkbox">
+                <label>kelp</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="165" class="checkbox">
+                <label>kidney_bean</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="166" class="checkbox">
+                <label>kiwi</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="167" class="checkbox">
+                <label>kohlrabi</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="168" class="checkbox">
+                <label>kumquat</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="169" class="checkbox">
+                <label>lamb</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="170" class="checkbox">
+                <label>lard</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="171" class="checkbox">
+                <label>laurel</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="172" class="checkbox">
+                <label>lavender</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="173" class="checkbox">
+                <label>leaf</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="174" class="checkbox">
+                <label>leek</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="175" class="checkbox">
+                <label>lemon</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="176" class="checkbox">
+                <label>lemon_juice</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="177" class="checkbox">
+                <label>lemon_peel</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="178" class="checkbox">
+                <label>lemongrass</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="179" class="checkbox">
+                <label>lentil</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="180" class="checkbox">
+                <label>lettuce</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="181" class="checkbox">
+                <label>licorice</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="182" class="checkbox">
+                <label>lilac_flower_oil</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="183" class="checkbox">
+                <label>lima_bean</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="184" class="checkbox">
+                <label>lime</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="185" class="checkbox">
+                <label>lime_juice</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="186" class="checkbox">
+                <label>lime_peel_oil</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="187" class="checkbox">
+                <label>lingonberry</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="188" class="checkbox">
+                <label>litchi</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="189" class="checkbox">
+                <label>liver</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="190" class="checkbox">
+                <label>lobster</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="191" class="checkbox">
+                <label>long_pepper</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="192" class="checkbox">
+                <label>lovage</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="193" class="checkbox">
+                <label>macadamia_nut</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="194" class="checkbox">
+                <label>macaroni</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="195" class="checkbox">
+                <label>mace</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="196" class="checkbox">
+                <label>mackerel</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="197" class="checkbox">
+                <label>malt</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="198" class="checkbox">
+                <label>mandarin</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="199" class="checkbox">
+                <label>mandarin_peel</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="200" class="checkbox">
+                <label>mango</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="201" class="checkbox">
+                <label>maple_syrup</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="202" class="checkbox">
+                <label>marjoram</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="203" class="checkbox">
+                <label>mate</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="204" class="checkbox">
+                <label>matsutake</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="205" class="checkbox">
+                <label>meat</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="206" class="checkbox">
+                <label>melon</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="207" class="checkbox">
+                <label>milk</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="208" class="checkbox">
+                <label>milk_fat</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="209" class="checkbox">
+                <label>mint</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="210" class="checkbox">
+                <label>mozzarella_cheese</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="211" class="checkbox">
+                <label>mung_bean</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="212" class="checkbox">
+                <label>munster_cheese</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="213" class="checkbox">
+                <label>muscat_grape</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="214" class="checkbox">
+                <label>mushroom</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="215" class="checkbox">
+                <label>mussel</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="216" class="checkbox">
+                <label>mustard</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="217" class="checkbox">
+                <label>mutton</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="218" class="checkbox">
+                <label>nectarine</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="219" class="checkbox">
+                <label>nira</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="220" class="checkbox">
+                <label>nut</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="221" class="checkbox">
+                <label>nutmeg</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="222" class="checkbox">
+                <label>oat</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="223" class="checkbox">
+                <label>oatmeal</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="224" class="checkbox">
+                <label>octopus</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="225" class="checkbox">
+                <label>okra</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="226" class="checkbox">
+                <label>olive</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="227" class="checkbox">
+                <label>olive_oil</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="228" class="checkbox">
+                <label>onion</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="229" class="checkbox">
+                <label>orange</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="230" class="checkbox">
+                <label>orange_flower</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="231" class="checkbox">
+                <label>orange_juice</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="232" class="checkbox">
+                <label>orange_peel</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="233" class="checkbox">
+                <label>oregano</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="234" class="checkbox">
+                <label>ouzo</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="235" class="checkbox">
+                <label>oyster</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="236" class="checkbox">
+                <label>palm</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="237" class="checkbox">
+                <label>papaya</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="238" class="checkbox">
+                <label>parmesan_cheese</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="239" class="checkbox">
+                <label>parsley</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="240" class="checkbox">
+                <label>parsnip</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="241" class="checkbox">
+                <label>passion_fruit</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="242" class="checkbox">
+                <label>pea</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="243" class="checkbox">
+                <label>peach</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="244" class="checkbox">
+                <label>peanut</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="245" class="checkbox">
+                <label>peanut_butter</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="246" class="checkbox">
+                <label>peanut_oil</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="247" class="checkbox">
+                <label>pear</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="248" class="checkbox">
+                <label>pear_brandy</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="249" class="checkbox">
+                <label>pecan</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="250" class="checkbox">
+                <label>pelargonium</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="251" class="checkbox">
+                <label>pepper</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="252" class="checkbox">
+                <label>peppermint</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="253" class="checkbox">
+                <label>peppermint_oil</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="254" class="checkbox">
+                <label>pimenta</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="255" class="checkbox">
+                <label>pimento</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="256" class="checkbox">
+                <label>pineapple</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="257" class="checkbox">
+                <label>pistachio</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="258" class="checkbox">
+                <label>plum</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="259" class="checkbox">
+                <label>popcorn</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="260" class="checkbox">
+                <label>porcini</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="261" class="checkbox">
+                <label>pork</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="262" class="checkbox">
+                <label>pork_liver</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="263" class="checkbox">
+                <label>pork_sausage</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="264" class="checkbox">
+                <label>port_wine</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="265" class="checkbox">
+                <label>potato</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="266" class="checkbox">
+                <label>potato_chip</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="267" class="checkbox">
+                <label>prawn</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="268" class="checkbox">
+                <label>prickly_pear</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="269" class="checkbox">
+                <label>provolone_cheese</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="270" class="checkbox">
+                <label>pumpkin</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="271" class="checkbox">
+                <label>quince</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="272" class="checkbox">
+                <label>radish</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="273" class="checkbox">
+                <label>raisin</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="274" class="checkbox">
+                <label>rapeseed</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="275" class="checkbox">
+                <label>raspberry</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="276" class="checkbox">
+                <label>raw_beef</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="277" class="checkbox">
+                <label>red_algae</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="278" class="checkbox">
+                <label>red_bean</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="279" class="checkbox">
+                <label>red_kidney_bean</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="280" class="checkbox">
+                <label>red_wine</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="281" class="checkbox">
+                <label>rhubarb</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="282" class="checkbox">
+                <label>roasted_almond</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="283" class="checkbox">
+                <label>roasted_beef</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="284" class="checkbox">
+                <label>roasted_hazelnut</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="285" class="checkbox">
+                <label>roasted_meat</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="286" class="checkbox">
+                <label>roasted_nut</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="287" class="checkbox">
+                <label>roasted_peanut</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="288" class="checkbox">
+                <label>roasted_pecan</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="289" class="checkbox">
+                <label>roasted_pork</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="290" class="checkbox">
+                <label>roasted_sesame_seed</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="291" class="checkbox">
+                <label>romano_cheese</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="292" class="checkbox">
+                <label>root</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="293" class="checkbox">
+                <label>roquefort_cheese</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="294" class="checkbox">
+                <label>rose</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="295" class="checkbox">
+                <label>rosemary</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="296" class="checkbox">
+                <label>rum</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="297" class="checkbox">
+                <label>rutabaga</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="298" class="checkbox">
+                <label>rye_bread</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="299" class="checkbox">
+                <label>rye_flour</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="300" class="checkbox">
+                <label>saffron</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="301" class="checkbox">
+                <label>sage</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="302" class="checkbox">
+                <label>sake</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="303" class="checkbox">
+                <label>salmon</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="304" class="checkbox">
+                <label>salmon_roe</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="305" class="checkbox">
+                <label>sassafras</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="306" class="checkbox">
+                <label>sauerkraut</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="307" class="checkbox">
+                <label>savory</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="308" class="checkbox">
+                <label>scallion</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="309" class="checkbox">
+                <label>scallop</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="310" class="checkbox">
+                <label>sea_algae</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="311" class="checkbox">
+                <label>seaweed</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="312" class="checkbox">
+                <label>seed</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="313" class="checkbox">
+                <label>sesame_oil</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="314" class="checkbox">
+                <label>sesame_seed</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="315" class="checkbox">
+                <label>shallot</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="316" class="checkbox">
+                <label>sheep_cheese</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="317" class="checkbox">
+                <label>shellfish</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="318" class="checkbox">
+                <label>sherry</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="319" class="checkbox">
+                <label>shiitake</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="320" class="checkbox">
+                <label>shrimp</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="321" class="checkbox">
+                <label>smoke</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="322" class="checkbox">
+                <label>smoked_fish</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="323" class="checkbox">
+                <label>smoked_salmon</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="324" class="checkbox">
+                <label>smoked_sausage</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="325" class="checkbox">
+                <label>sour_cherry</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="326" class="checkbox">
+                <label>sour_milk</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="327" class="checkbox">
+                <label>soy_sauce</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="328" class="checkbox">
+                <label>soybean</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="329" class="checkbox">
+                <label>soybean_oil</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="330" class="checkbox">
+                <label>spearmint</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="331" class="checkbox">
+                <label>squash</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="332" class="checkbox">
+                <label>squid</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="333" class="checkbox">
+                <label>star_anise</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="334" class="checkbox">
+                <label>starch</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="335" class="checkbox">
+                <label>strawberry</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="336" class="checkbox">
+                <label>strawberry_jam</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="337" class="checkbox">
+                <label>strawberry_juice</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="338" class="checkbox">
+                <label>sturgeon_caviar</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="339" class="checkbox">
+                <label>sumac</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="340" class="checkbox">
+                <label>sunflower_oil</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="341" class="checkbox">
+                <label>sweet_potato</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="342" class="checkbox">
+                <label>swiss_cheese</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="343" class="checkbox">
+                <label>tabasco_pepper</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="344" class="checkbox">
+                <label>tamarind</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="345" class="checkbox">
+                <label>tangerine</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="346" class="checkbox">
+                <label>tarragon</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="347" class="checkbox">
+                <label>tea</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="348" class="checkbox">
+                <label>tequila</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="349" class="checkbox">
+                <label>thai_pepper</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="350" class="checkbox">
+                <label>thyme</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="351" class="checkbox">
+                <label>tomato</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="352" class="checkbox">
+                <label>tomato_juice</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="353" class="checkbox">
+                <label>truffle</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="354" class="checkbox">
+                <label>tuna</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="355" class="checkbox">
+                <label>turkey</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="356" class="checkbox">
+                <label>turmeric</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="357" class="checkbox">
+                <label>turnip</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="358" class="checkbox">
+                <label>vanilla</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="359" class="checkbox">
+                <label>veal</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="360" class="checkbox">
+                <label>vegetable</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="361" class="checkbox">
+                <label>vegetable_oil</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="362" class="checkbox">
+                <label>vinegar</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="363" class="checkbox">
+                <label>violet</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="364" class="checkbox">
+                <label>walnut</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="365" class="checkbox">
+                <label>wasabi</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="366" class="checkbox">
+                <label>watercress</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="367" class="checkbox">
+                <label>watermelon</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="368" class="checkbox">
+                <label>wheat</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="369" class="checkbox">
+                <label>wheat_bread</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="370" class="checkbox">
+                <label>whiskey</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="371" class="checkbox">
+                <label>white_bread</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="372" class="checkbox">
+                <label>white_wine</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="373" class="checkbox">
+                <label>whole_grain_wheat_flour</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="374" class="checkbox">
+                <label>wine</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="375" class="checkbox">
+                <label>wood</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="376" class="checkbox">
+                <label>yam</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="377" class="checkbox">
+                <label>yeast</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="378" class="checkbox">
+                <label>yogurt</label>
+            </div>
+            
+            <div class="boxCont">
+                <input type="checkbox" value="379" class="checkbox">
+                <label>zucchini</label>
+            </div>
+            
+            
+        </div>
+        <div style="padding-top:10px">
+            <button onClick="startInference()">What kind of cuisine can you make?</button>
+        </div> 
+    </body>
+    <script>
+        const ingredients = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        
+        const checks = [].slice.call(document.querySelectorAll('.checkbox'));
 
-<head>
-  <meta charset="UTF-8">
-  <title>Machine Learning for Beginners</title>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="description" content="Description">
-  <meta name="viewport"
-    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css">
-</head>
+        // use an async context to call onnxruntime functions.
+        function init() {
+            
+            checks.forEach(function (checkbox, index) {
+                checkbox.onchange = function () {
+                    if (this.checked) {
+                        var index = checkbox.value;
 
-<body>
-  <div id="app"></div>
-  <script>
-    window.$docsify = {
-      name: 'Machine Learning for Beginners',
-      repo: 'https://github.com/Microsoft/ML-For-Beginners',
-      relativePath: true
-    }
-  </script>
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
-</body>
+                        if (index !== -1) {
+                            ingredients[index] = 1;
+                        }
+                        console.log(ingredients)
+                    }
+                    else {
+                        var index = checkbox.value;
 
+                        if (index !== -1) {
+                            ingredients[index] = 0;
+                        }
+                        console.log(ingredients)
+                    }
+                }
+            })
+        }
+
+        function testCheckboxes() {
+                for (var i = 0; i < checks.length; i++)
+                    if (checks[i].type == "checkbox")
+                        if (checks[i].checked)
+                            return true;
+                return false;
+        }
+
+        async function startInference() {
+
+            let checked = testCheckboxes()
+
+            if (checked) {
+
+            try {
+                // create a new session and load the model.
+                
+                const session = await ort.InferenceSession.create('model.onnx');
+
+                const input = new ort.Tensor(new Float32Array(ingredients), [1, 380]);
+                const feeds = { float_input: input };
+
+                // feed inputs and run
+
+                const results = await session.run(feeds);
+
+                // read from results
+                alert('You can enjoy ' + results.label.data[0] + ' cuisine today!')
+
+            } catch (e) {
+                console.log(`failed to inference ONNX model: ${e}.`);
+            }
+        }
+        else alert("Please check an ingredient")
+            
+        }
+        init();
+    </script>
 </html>
